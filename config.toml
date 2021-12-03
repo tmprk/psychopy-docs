@@ -5,6 +5,7 @@ theme = 'hugo-book'
 
 [params]
     BookTheme = 'auto'
+    BookMenuBundle= '/menu'
 
 [markup.goldmark.renderer]
     unsafe= true
