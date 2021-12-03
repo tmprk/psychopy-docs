@@ -98,7 +98,6 @@ After pressing ```cmd+B``` to compile it, we should expect to see a window pop u
   <img width="550px" style="border-radius: 10px;" src="images/programmatic.png" />
 </p>
 
-
 \
 Now that we have everything set up, we should proceed the actual demos and take note of any difficulties and/or successes. The visual search task would be a good start.
 

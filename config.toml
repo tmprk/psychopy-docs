@@ -1,11 +1,11 @@
-baseURL = 'https://tmprk.github.io/psychopy-docs'
+baseURL = 'http://localhost:1313/psychopy-docs'
 languageCode = 'en-us'
-title = 'PsychoPy Log'
+title = 'Psych 499 Log'
 theme = 'hugo-book'
 
 [params]
     BookTheme = 'auto'
-    BookMenuBundle= '/menu'
+    BookMenuBundle = '/menu'
 
 [markup.goldmark.renderer]
-    unsafe= true
+    unsafe = true
