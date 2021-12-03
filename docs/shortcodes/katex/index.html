@@ -2,19 +2,20 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content>
+<meta name=description content="KaTeX #  KaTeX shortcode let you render math typesetting in markdown document. See KaTeX
+Example #  {{< katex [display] [class=&#34;text-center&#34;] >}} f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi {{< /katex >}}     \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]    Display Mode Example #  Here is some inline example:  \(\pi(x)\)  , rendered in the same line. And below is display example, having display: block  \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]  Text continues here.">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Categories">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://tmprk.github.io/psychopy-docs/categories/">
-<title>Categories | PsychoPy Log</title>
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
+<meta property="og:description" content="KaTeX #  KaTeX shortcode let you render math typesetting in markdown document. See KaTeX
+Example #  {{< katex [display] [class=&#34;text-center&#34;] >}} f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi {{< /katex >}}     \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]    Display Mode Example #  Here is some inline example:  \(\pi(x)\)  , rendered in the same line. And below is display example, having display: block  \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]  Text continues here.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tmprk.github.io/psychopy-docs/docs/shortcodes/katex/"><meta property="article:section" content="docs">
+<title>Katex | PsychoPy Log</title>
 <link rel=manifest href=/psychopy-docs/manifest.json>
 <link rel=icon href=/psychopy-docs/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/psychopy-docs/book.min.95d69eb6bad8b9707ff2b5d8d9e31ce70a1b84f2ed7ffaf665ffcf00aa7993bd.css integrity="sha256-ldaetrrYuXB/8rXY2eMc5wobhPLtf/r2Zf/PAKp5k70=" crossorigin=anonymous>
 <script defer src=/psychopy-docs/flexsearch.min.js></script>
 <script defer src=/psychopy-docs/en.search.min.eedf1534fce534d6ceab0589c2263a8cc8f0656a4528f21dbe151fb92b2b8281.js integrity="sha256-7t8VNPzlNNbOqwWJwiY6jMjwZWpFKPIdvhUfuSsrgoE=" crossorigin=anonymous></script>
-<link rel=alternate type=application/rss+xml href=https://tmprk.github.io/psychopy-docs/categories/index.xml title="PsychoPy Log">
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -99,7 +100,7 @@
 <a href=https://tmprk.github.io/psychopy-docs/docs/shortcodes/hints/>Hints</a>
 </li>
 <li>
-<a href=https://tmprk.github.io/psychopy-docs/docs/shortcodes/katex/>Katex</a>
+<a href=https://tmprk.github.io/psychopy-docs/docs/shortcodes/katex/ class=active>Katex</a>
 </li>
 <li>
 <a href=https://tmprk.github.io/psychopy-docs/docs/shortcodes/mermaid/>Mermaid</a>
@@ -134,49 +135,72 @@
 <label for=menu-control>
 <img src=/psychopy-docs/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>Categories</strong>
+<strong>Katex</strong>
 <label for=toc-control>
 <img src=/psychopy-docs/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav>
+<nav id=TableOfContents>
 <ul>
-<li class=book-section-flat>
-<strong>Categories</strong>
-<ul>
-</ul>
-</li>
-<li class=book-section-flat>
-<strong>Tags</strong>
-<ul>
-</ul>
-</li>
+<li><a href=#example>Example</a></li>
+<li><a href=#display-mode-example>Display Mode Example</a></li>
 </ul>
 </nav>
 </aside>
 </header>
+<article class=markdown><h1 id=katex>
+KaTeX
+<a class=anchor href=#katex>#</a>
+</h1>
+<p>KaTeX shortcode let you render math typesetting in markdown document. See <a href=https://katex.org/>KaTeX</a></p>
+<h2 id=example>
+Example
+<a class=anchor href=#example>#</a>
+</h2>
+<div class="book-columns flex flex-wrap">
+<div class="flex-even markdown-inner">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex>{{&lt; katex [display] [class=&#34;text-center&#34;]  &gt;}}
+f(x) = <span style=color:#66d9ef>\int</span>_{-<span style=color:#66d9ef>\infty</span>}^<span style=color:#66d9ef>\infty\hat</span> f(<span style=color:#66d9ef>\xi</span>)<span style=color:#66d9ef>\,</span>e^{2 <span style=color:#66d9ef>\pi</span> i <span style=color:#66d9ef>\xi</span> x}<span style=color:#66d9ef>\,</span>d<span style=color:#66d9ef>\xi</span>
+{{&lt; /katex &gt;}}
+</code></pre></div>
+</div>
+<div class="flex-even markdown-inner">
+<link rel=stylesheet href=/psychopy-docs/katex/katex.min.css>
+<script defer src=/psychopy-docs/katex/katex.min.js></script>
+<script defer src=/psychopy-docs/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>
+\[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]
+</span>
+</div>
+</div>
+<h2 id=display-mode-example>
+Display Mode Example
+<a class=anchor href=#display-mode-example>#</a>
+</h2>
+<p>Here is some inline example: <span>
+\(\pi(x)\)
+</span>
+, rendered in the same line. And below is <code>display</code> example, having <code>display: block</code>
+<span>
+\[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]
+</span>
+Text continues here.</p>
+</article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
 </div>
 <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
 </footer>
+<div class=book-comments>
+</div>
 <label for=menu-control class="hidden book-menu-overlay"></label>
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav>
+<nav id=TableOfContents>
 <ul>
-<li class=book-section-flat>
-<strong>Categories</strong>
-<ul>
-</ul>
-</li>
-<li class=book-section-flat>
-<strong>Tags</strong>
-<ul>
-</ul>
-</li>
+<li><a href=#example>Example</a></li>
+<li><a href=#display-mode-example>Display Mode Example</a></li>
 </ul>
 </nav>
 </div>

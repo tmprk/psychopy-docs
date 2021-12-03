@@ -2,19 +2,20 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content>
+<meta name=description content="Section #  Section renders pages in section as definition list, using title and description.
+Example #  {{< section >}}   First Page  First page # Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Categories">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://tmprk.github.io/psychopy-docs/categories/">
-<title>Categories | PsychoPy Log</title>
+<meta property="og:url" content="https://tmprk.github.io/psychopy-docs/docs/shortcodes/section/">
+<title>Section | PsychoPy Log</title>
 <link rel=manifest href=/psychopy-docs/manifest.json>
 <link rel=icon href=/psychopy-docs/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/psychopy-docs/book.min.95d69eb6bad8b9707ff2b5d8d9e31ce70a1b84f2ed7ffaf665ffcf00aa7993bd.css integrity="sha256-ldaetrrYuXB/8rXY2eMc5wobhPLtf/r2Zf/PAKp5k70=" crossorigin=anonymous>
 <script defer src=/psychopy-docs/flexsearch.min.js></script>
 <script defer src=/psychopy-docs/en.search.min.eedf1534fce534d6ceab0589c2263a8cc8f0656a4528f21dbe151fb92b2b8281.js integrity="sha256-7t8VNPzlNNbOqwWJwiY6jMjwZWpFKPIdvhUfuSsrgoE=" crossorigin=anonymous></script>
-<link rel=alternate type=application/rss+xml href=https://tmprk.github.io/psychopy-docs/categories/index.xml title="PsychoPy Log">
+<link rel=alternate type=application/rss+xml href=https://tmprk.github.io/psychopy-docs/docs/shortcodes/section/index.xml title="PsychoPy Log">
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -105,9 +106,9 @@
 <a href=https://tmprk.github.io/psychopy-docs/docs/shortcodes/mermaid/>Mermaid</a>
 </li>
 <li>
-<input type=checkbox id=section-d3fc1bf6d66cd84b896a0af9f40cb1d5 class=toggle>
+<input type=checkbox id=section-d3fc1bf6d66cd84b896a0af9f40cb1d5 class=toggle checked>
 <label for=section-d3fc1bf6d66cd84b896a0af9f40cb1d5 class="flex justify-between">
-<a href=https://tmprk.github.io/psychopy-docs/docs/shortcodes/section/>Section</a>
+<a href=https://tmprk.github.io/psychopy-docs/docs/shortcodes/section/ class=active>Section</a>
 </label>
 <ul>
 <li>
@@ -134,49 +135,60 @@
 <label for=menu-control>
 <img src=/psychopy-docs/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>Categories</strong>
+<strong>Section</strong>
 <label for=toc-control>
 <img src=/psychopy-docs/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav>
+<nav id=TableOfContents>
 <ul>
-<li class=book-section-flat>
-<strong>Categories</strong>
-<ul>
-</ul>
-</li>
-<li class=book-section-flat>
-<strong>Tags</strong>
-<ul>
-</ul>
-</li>
+<li><a href=#example>Example</a></li>
 </ul>
 </nav>
 </aside>
 </header>
+<article class=markdown><h1 id=section>
+Section
+<a class=anchor href=#section>#</a>
+</h1>
+<p>Section renders pages in section as definition list, using title and description.</p>
+<h2 id=example>
+Example
+<a class=anchor href=#example>#</a>
+</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tpl data-lang=tpl><span style=color:#75715e>{{</span><span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>section</span> <span style=color:#f92672>&gt;</span><span style=color:#75715e>}}</span>
+</code></pre></div><dl>
+<dt>
+<a href=/psychopy-docs/docs/shortcodes/section/first-page/>First Page</a>
+</dt>
+<dd class=markdown-inner>
+First page # Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</dd>
+<dt>
+<a href=/psychopy-docs/docs/shortcodes/section/second-page/>Second Page</a>
+</dt>
+<dd class=markdown-inner>
+Second Page # Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</dd>
+</dl>
+</article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
 </div>
 <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
 </footer>
+<div class=book-comments>
+</div>
 <label for=menu-control class="hidden book-menu-overlay"></label>
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav>
+<nav id=TableOfContents>
 <ul>
-<li class=book-section-flat>
-<strong>Categories</strong>
-<ul>
-</ul>
-</li>
-<li class=book-section-flat>
-<strong>Tags</strong>
-<ul>
-</ul>
-</li>
+<li><a href=#example>Example</a></li>
 </ul>
 </nav>
 </div>
