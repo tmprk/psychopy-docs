@@ -1,4 +1,4 @@
-baseURL = 'http://tmprk.github.io/psychopy-notes'
+baseURL = 'http://tmprk.github.io/psychopy-docs'
 languageCode = 'en-us'
 title = 'PsychoPy Log'
 theme = 'hugo-book'
