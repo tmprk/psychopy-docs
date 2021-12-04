@@ -5,9 +5,10 @@ title: "Visual Search example"
 
 ## PsychoPy Program of Visual Search (directly from Ch. 9)
 
-In Psych 499, the end goal was to deploy and pilot a visual search program using the specifications of  *Interpersonal Competitiveness and Improvement in Reaction Time in a Visual Search. **Romero et al. 2015.** *
+In Psych 499, the end goal was to deploy and pilot a visual search program using the specifications of
+>*Interpersonal Competitiveness and Improvement in Reaction Time in a Visual Search. **Romero et al. 2015.***
 
-[Building Experiments in PsychoPy](https://uk.sagepub.com/en-gb/eur/building-experiments-in-psychopy/book253480) is a friendly introduction to exploring the PsychoPy user interface and learning how to use the tools it provides. Chapter 9 of this provides a step-by-step tutorial for a generic visual search using mouse as input. This was a good starting point for developing our own visual search program.
+The book, [Building Experiments in PsychoPy](https://uk.sagepub.com/en-gb/eur/building-experiments-in-psychopy/book253480), is a friendly introduction to exploring the PsychoPy user interface and learning how to use the tools it provides. Chapter 9 of this provides a step-by-step tutorial for a generic visual search using mouse as input. This was a good starting point for developing our own visual search program.
 
 Many of these instructions may be redundant after looking through Chapter 9 of the book, but it provides an updated set of instructions and will attempt to elaborate more on the flow of a psychopy program in lay terms.
 
@@ -71,5 +72,5 @@ Hexagonal target is red    |  Hexagonal target is black
 
 Once opened, click the green play button at the top of the window. The experiment will start in full screen.
 <p align="center">
-  <img width="550px" style="border-radius: 10px;" src="images/run-exp.png" />
+  <img width="550px" src="images/run-exp.png" />
 </p>
