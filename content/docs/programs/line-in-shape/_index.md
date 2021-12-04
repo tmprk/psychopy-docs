@@ -3,13 +3,15 @@ weight: 1
 title: "Line-in-shape written using PsychoPy"
 ---
 
-## Line-in-shape written using PsychoPy
+## Line-in-shape written using PsychoPy programmatically
 
 The requirements for a visual search line-in-shape task were a little more demanding than the chapter 9 example.
 
 For example, the number of shapes is not predetermined as was in the previous example. Instead of creating 1-8 distractors and placing them in random locations, the line-in-shape program requires anywhere from 8 to 20 shapes that are oriented in a circle.
 
 But the radius of the circle must increase the more stimuli there are. In addition to determining the location of the stimuli and target based on the # of shapes, some trials have distractors and some do not. The lines are inside each of the stimuli must also be either 22.5 degrees from horizontal or vertical.
+
+## Some dilemmas
 
 The first problem when trying to make this in builder would be: Should I make 20 components despite only having 8 or 12 for some trials? Setting the opacity to 0 for the unused one may work, but that means the coordinates of the shapes must be stored in a conditions file and each of the possibilities must be enumerated in the csv. Another problem would be manually adding the shape and line components (over 40) and setting the properties for each. This seemed very tedious and could be resolved using a simple for loop in code (the book also mentions this).
 
