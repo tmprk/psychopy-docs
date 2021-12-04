@@ -2,7 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Line-in-shape written using PsychoPy #  The requirements for a visual search line-in-shape task were a little more demanding than the chapter 9 example.
+<meta name=description content="Line-in-shape written using PsychoPy programmatically #  The requirements for a visual search line-in-shape task were a little more demanding than the chapter 9 example.
 For example, the number of shapes is not predetermined as was in the previous example. Instead of creating 1-8 distractors and placing them in random locations, the line-in-shape program requires anywhere from 8 to 20 shapes that are oriented in a circle.
 But the radius of the circle must increase the more stimuli there are.">
 <meta name=theme-color content="#FFFFFF">
@@ -15,7 +15,7 @@ But the radius of the circle must increase the more stimuli there are.">
 <link rel=icon href=/psychopy-docs/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/psychopy-docs/book.min.95d69eb6bad8b9707ff2b5d8d9e31ce70a1b84f2ed7ffaf665ffcf00aa7993bd.css integrity="sha256-ldaetrrYuXB/8rXY2eMc5wobhPLtf/r2Zf/PAKp5k70=" crossorigin=anonymous>
 <script defer src=/psychopy-docs/flexsearch.min.js></script>
-<script defer src=/psychopy-docs/en.search.min.c44c5bf6e8d54ae313ca1ab21b22d1cae00e56d7370f52a1f8094d548ffc2c59.js integrity="sha256-xExb9ujVSuMTyhqyGyLRyuAOVtc3D1Kh+AlNVI/8LFk=" crossorigin=anonymous></script>
+<script defer src=/psychopy-docs/en.search.min.f4be79cce6cf9d4b092ac779c532f438bb7d808544fbfa8944e719a0778863d2.js integrity="sha256-9L55zObPnUsJKsd5xTL0OLt9gIVE+/qJROcZoHeIY9I=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=http://localhost:1313/psychopy-docs/docs/programs/line-in-shape/index.xml title="Psych 499 Log">
 </head>
 <body dir=ltr>
@@ -70,20 +70,25 @@ But the radius of the circle must increase the more stimuli there are.">
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#line-in-shape-written-using-psychopy>Line-in-shape written using PsychoPy</a></li>
+<li><a href=#line-in-shape-written-using-psychopy-programmatically>Line-in-shape written using PsychoPy programmatically</a></li>
+<li><a href=#some-dilemmas>Some dilemmas</a></li>
 <li><a href=#guidelines>Guidelines</a></li>
 <li><a href=#how-to-run-this-program>How to run this program</a></li>
 </ul>
 </nav>
 </aside>
 </header>
-<article class=markdown><h2 id=line-in-shape-written-using-psychopy>
-Line-in-shape written using PsychoPy
-<a class=anchor href=#line-in-shape-written-using-psychopy>#</a>
+<article class=markdown><h2 id=line-in-shape-written-using-psychopy-programmatically>
+Line-in-shape written using PsychoPy programmatically
+<a class=anchor href=#line-in-shape-written-using-psychopy-programmatically>#</a>
 </h2>
 <p>The requirements for a visual search line-in-shape task were a little more demanding than the chapter 9 example.</p>
 <p>For example, the number of shapes is not predetermined as was in the previous example. Instead of creating 1-8 distractors and placing them in random locations, the line-in-shape program requires anywhere from 8 to 20 shapes that are oriented in a circle.</p>
 <p>But the radius of the circle must increase the more stimuli there are. In addition to determining the location of the stimuli and target based on the # of shapes, some trials have distractors and some do not. The lines are inside each of the stimuli must also be either 22.5 degrees from horizontal or vertical.</p>
+<h2 id=some-dilemmas>
+Some dilemmas
+<a class=anchor href=#some-dilemmas>#</a>
+</h2>
 <p>The first problem when trying to make this in builder would be: Should I make 20 components despite only having 8 or 12 for some trials? Setting the opacity to 0 for the unused one may work, but that means the coordinates of the shapes must be stored in a conditions file and each of the possibilities must be enumerated in the csv. Another problem would be manually adding the shape and line components (over 40) and setting the properties for each. This seemed very tedious and could be resolved using a simple for loop in code (the book also mentions this).</p>
 <p>Next, onto the official guidelines.</p>
 <h2 id=guidelines>
@@ -148,7 +153,8 @@ python main.py
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#line-in-shape-written-using-psychopy>Line-in-shape written using PsychoPy</a></li>
+<li><a href=#line-in-shape-written-using-psychopy-programmatically>Line-in-shape written using PsychoPy programmatically</a></li>
+<li><a href=#some-dilemmas>Some dilemmas</a></li>
 <li><a href=#guidelines>Guidelines</a></li>
 <li><a href=#how-to-run-this-program>How to run this program</a></li>
 </ul>
