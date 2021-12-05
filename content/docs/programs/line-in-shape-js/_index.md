@@ -193,7 +193,7 @@ To get a datastore yourself or your own organization, there are many options. Yo
   <img width="500px" style="border-radius: 10px;" src="images/new-project.png" />
 </p>
 
-After creating a project, a storage bucket must be created. Go to the storage icon on the left navigation bar, and click 
+After creating a project, a storage bucket must be created. Go to the storage icon on the left navigation bar, and click "Create a new bucket"
 
 <p align="center">
   <img width="500px" style="border-radius: 10px;" src="images/new-bucket.png" />
