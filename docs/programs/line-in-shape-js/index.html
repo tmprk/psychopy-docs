@@ -14,7 +14,7 @@ As a result, the PsychoPy organization created some scripts to convert a psychop
 <link rel=icon href=/psychopy-docs/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/psychopy-docs/book.min.95d69eb6bad8b9707ff2b5d8d9e31ce70a1b84f2ed7ffaf665ffcf00aa7993bd.css integrity="sha256-ldaetrrYuXB/8rXY2eMc5wobhPLtf/r2Zf/PAKp5k70=" crossorigin=anonymous>
 <script defer src=/psychopy-docs/flexsearch.min.js></script>
-<script defer src=/psychopy-docs/en.search.min.630ce323bdc001241a761feb85b6b0303df1987ce0fefd4e279911b033005b2e.js integrity="sha256-YwzjI73AASQadh/rhbawMD3xmHzg/v1OJ5kRsDMAWy4=" crossorigin=anonymous></script>
+<script defer src=/psychopy-docs/en.search.min.6b725ed889bfc024ad9469e1a605379124c301ad67e397792742bfd3a0b004e6.js integrity="sha256-a3Je2Im/wCStlGnhpgU3kSTDAa1n45d5J0K/06CwBOY=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=http://localhost:1313/psychopy-docs/docs/programs/line-in-shape-js/index.xml title="Psych 499 Log">
 </head>
 <body dir=ltr>
@@ -158,8 +158,8 @@ Key parts of the solution
 }
 </code></pre></div><p>In order for the psychojs program to call this endpoint by itself, I added this snippet to the PsychoJS code. This goes in uploadData(key, value) of <a href=https://github.com/psychopy/psychojs/blob/8943dee36b5aa0a44a0cc34a5d5773cb1bb45465/src/core/ServerManager.js><code>ServerManager.js</code></a>.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>self</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>URL</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/api/upload-csv&#39;</span>
-			
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>URL</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/api/upload-csv&#39;</span> <span style=color:#75715e>// Netlify function is located here!!!
+</span><span style=color:#75715e></span>			
 <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Promise((<span style=color:#a6e22e>resolve</span>, <span style=color:#a6e22e>reject</span>) =&gt; {
     <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>type</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;text/csv&#34;</span>
     <span style=color:#75715e>// value is the comma separated value passed into the function
@@ -178,7 +178,7 @@ Key parts of the solution
 How to use the program
 <a class=anchor href=#how-to-use-the-program>#</a>
 </h2>
-<p>I actually have a version deployed right now. It is the subdomain is <code>psych dot netlify dot com</code> (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this minus the developer tools on the right side, which was for debugging purposes.</p>
+<p>I actually have a version deployed right now. It is located on the domain <code>psych dot netlify dot com</code> (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this minus the developer tools on the right side, which was for debugging purposes.</p>
 <div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
 <iframe src=https://www.youtube.com/embed/1Xv_Zl6Qtvs style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
 </div>
