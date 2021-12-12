@@ -21,13 +21,13 @@ As a result, I decided to just translate the python code to javascript. The main
 
 ## Key parts of the solution
 
-PsychoJS library doesn't require any interface with a server to display shapes and accept keystrokes, etc. As a result, I decided to dabble in serverless and host the core program and Netlify Functions ✨, and call the lambda functions. In the words of netlify:
+PsychoJS library doesn't require any server-side code to display shapes and accept keystrokes, etc. As a result, I decided to dabble in serverless and host the core program on Netlify, utlizing Netlify Functions ✨ for uploading data. In the words of Netlify:
 
 > *Deploy server-side code that works as API endpoints, runs automatically in response to events, or processes more complex jobs in the background.*
 > 
 > *Functions receive request context or event data, and return data back to your front end.*
 
-This is perfect because everything up until the CSV upload is local; the keystroke input, trial results, and CSV formatting are all done in javascript on the browser. Once all the this happens, the plan was to call a function endpoint (passing in the CSV data through the event body) and my function would handle the data and upload it somewhere safe.
+This is perfect because everything up until the CSV upload is local; displaying shapes, keystroke input, trial results, and CSV formatting are all done in javascript on the browser. Once all the this happens, the plan was to call a Netlify function endpoint (passing in the CSV data through the event body) and my function would handle the data and upload it somewhere safe.
 
 In addition to the actual program written in PsychoJS, here is a simple Netlify function I used:
 
@@ -81,23 +81,23 @@ exports.handler = async event => {
 }
 ```
 
-In order for the psychojs program to call this endpoint by itself, I added this snippet to the PsychoJS code. This goes in uploadData(key, value) of [`ServerManager.js`](https://github.com/psychopy/psychojs/blob/8943dee36b5aa0a44a0cc34a5d5773cb1bb45465/src/core/ServerManager.js).
+But how will this Netlify function be called? The psychojs program must call this endpoint (/api/upload-csv) by itself, so I added this snippet to the PsychoJS code. This goes in uploadData(key, value) of [`ServerManager.js`](https://github.com/psychopy/psychojs/blob/8943dee36b5aa0a44a0cc34a5d5773cb1bb45465/src/core/ServerManager.js). Towards the end of the experiment when `uploadData` is executed, the Netlify function should be called.
 
 ```javascript
 const self = this;
-const URL = '/api/upload-csv' // Netlify function is located here!!!
+const URL = '/api/upload-csv' // Netlify function is located at this endpoint !!!
 			
 return new Promise((resolve, reject) => {
     let type = "text/csv"
-    // value is the comma separated value passed into the function
+    // "value" is the comma separated value passed into the function
     const blob = new Blob([value], { type });
     fetch(URL, {
-        method: 'post',
+        method: 'post', // make a post request to the endpoint above
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ filename: key, csv: value })
+        body: JSON.stringify({ filename: key, csv: value }) // the data
     }).then(res => res.json())
         .then(res => console.log(res));
 });
@@ -105,7 +105,7 @@ return new Promise((resolve, reject) => {
 
 ## How to use the program
 
-I actually have a version deployed right now. It is located on the domain `psych dot netlify dot app` (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this minus the developer tools on the right side, which was for debugging purposes.
+I actually have a version deployed right now. It is located on the domain `psych dot netlify dot app` (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this without the developer tools on the right side, which was for debugging purposes.
 
 {{< youtube 1Xv_Zl6Qtvs >}}
 
@@ -117,7 +117,7 @@ The program will let you know when the experiment has ended. However, where did 
 
 ## How to install it on your own
 
-Great, now you're ready to download the code and make some tweaks. Before you clone the repository containing the code, there are some prerequisites:
+Great, now you're ready to download the code and make some of your own changes. Before you clone the repository containing the code, there are some prerequisites:
 1. If you're on mac, [brew](https://brew.sh/) package manager. If you're on windows move to the next step.
 2. Node and npm, for javascript runtime (local server)
 
@@ -137,7 +137,7 @@ npm install netlify-cli -g
 
 &nbsp;
 
-Once you have all of these, you're can now test the core psychojs program and the netlify functions (these are included in the repository). First clone this [this](https://github.com/tmprk/line-in-shape-psychojs/) github repository.
+Once you have all of these, you're now ready to test the core psychojs program and the Netlify functions (these are included in the repository). First clone this [this](https://github.com/tmprk/line-in-shape-psychojs/) github repository.
 
 ```bash
 git clone https://github.com/tmprk/line-in-shape-psychojs/tree/serverless
@@ -158,7 +158,7 @@ ls # list contents of directory
     └── visual-search.js
 ```
 
-If you try to run `netlify dev` or any local server to test out your program, it will not work, as many of the essential javascript dependencies are missing. The code you cloned does not include these dependences (because they take up space) but has a list of them in `package.json`. Run `npm install` in the root of the project. You should now see `node_modules`, which are used by the program.
+If you try to run `netlify dev` or any local server to test out your program, it will not work, as many of the essential javascript dependencies are missing. The code you cloned does not include these dependences (because they take up space) but keeps a list of them in `package.json`. Run `npm install` in the root of the project. You should now see `node_modules`, which are used by the program.
 
 Next, run the Netlify dev tools in the root of the project
 ```bash
@@ -176,7 +176,7 @@ netlify dev
 ◈ Unable to determine public folder to serve files from. Using current working directory
 ◈ Setup a netlify.toml file with a [dev] section to specify your dev server settings.
 ◈ See docs at: https://cli.netlify.com/netlify-dev#project-detection
-◈ Running static server from "line-in-shape-personal"
+◈ Running static server from "line-in-shape"
 ◈ Loaded function upload-csv.
 ◈ Functions server is listening on 52182
 
