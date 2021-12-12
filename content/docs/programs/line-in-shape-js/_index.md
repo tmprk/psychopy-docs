@@ -109,7 +109,7 @@ I actually have a version deployed right now. It is located on the domain `psych
 
 {{< youtube 1Xv_Zl6Qtvs >}}
 
-The program will let you know when the experiment has ended. However, where did the data hosted? As you may have seen earlier in the Netlify function, [supabase](https://supabase.com/) is used as a datastore. When I navigate to my supabase storage dashboard, I see a list of CSVs that can be downloaded:
+The program will let you know when the experiment has ended. However, where is the data hosted? As you may have seen earlier in the Netlify function, [supabase](https://supabase.com/) is used as a datastore. The deployed version will send data to my Supabase bucket. When I navigate to my supabase storage dashboard, I see a list of CSVs that can be downloaded:
 
 <p align="center">
   <img width="500px" style="border-radius: 10px;" src="images/storage.png" />
