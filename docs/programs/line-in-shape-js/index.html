@@ -14,7 +14,7 @@ As a result, the PsychoPy organization created some scripts to convert a psychop
 <link rel=icon href=/psychopy-docs/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/psychopy-docs/book.min.95d69eb6bad8b9707ff2b5d8d9e31ce70a1b84f2ed7ffaf665ffcf00aa7993bd.css integrity="sha256-ldaetrrYuXB/8rXY2eMc5wobhPLtf/r2Zf/PAKp5k70=" crossorigin=anonymous>
 <script defer src=/psychopy-docs/flexsearch.min.js></script>
-<script defer src=/psychopy-docs/en.search.min.0b29d379dd20a0719795cb0b1afe54cb5ebb4cdc321e0018dedab91a78aab8a1.js integrity="sha256-CynTed0goHGXlcsLGv5Uy167TNwyHgAY3tq5GniquKE=" crossorigin=anonymous></script>
+<script defer src=/psychopy-docs/en.search.min.dea79d60d0842654fadcb230e3903fff05c4d7ef2e8265834cc99c7057fe9c26.js integrity="sha256-3qedYNCEJlT63LIw45A//wXE1+8ugmWDTMmccFf+nCY=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=http://localhost:1313/psychopy-docs/docs/programs/line-in-shape-js/index.xml title="Psych 499 Log">
 </head>
 <body dir=ltr>
@@ -102,12 +102,12 @@ Solution
 Key parts of the solution
 <a class=anchor href=#key-parts-of-the-solution>#</a>
 </h2>
-<p>PsychoJS library doesn&rsquo;t require any interface with a server to display shapes and accept keystrokes, etc. As a result, I decided to dabble in serverless and host the core program and Netlify Functions ✨, and call the lambda functions. In the words of netlify:</p>
+<p>PsychoJS library doesn&rsquo;t require any server-side code to display shapes and accept keystrokes, etc. As a result, I decided to dabble in serverless and host the core program on Netlify, utlizing Netlify Functions ✨ for uploading data. In the words of Netlify:</p>
 <blockquote>
 <p><em>Deploy server-side code that works as API endpoints, runs automatically in response to events, or processes more complex jobs in the background.</em></p>
 <p><em>Functions receive request context or event data, and return data back to your front end.</em></p>
 </blockquote>
-<p>This is perfect because everything up until the CSV upload is local; the keystroke input, trial results, and CSV formatting are all done in javascript on the browser. Once all the this happens, the plan was to call a function endpoint (passing in the CSV data through the event body) and my function would handle the data and upload it somewhere safe.</p>
+<p>This is perfect because everything up until the CSV upload is local; displaying shapes, keystroke input, trial results, and CSV formatting are all done in javascript on the browser. Once all the this happens, the plan was to call a Netlify function endpoint (passing in the CSV data through the event body) and my function would handle the data and upload it somewhere safe.</p>
 <p>In addition to the actual program written in PsychoJS, here is a simple Netlify function I used:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#75715e>// Grab our credentials from a .env file or environment variables
 </span><span style=color:#75715e></span><span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;dotenv&#39;</span>).<span style=color:#a6e22e>config</span>();
@@ -156,29 +156,29 @@ Key parts of the solution
         }
     }
 }
-</code></pre></div><p>In order for the psychojs program to call this endpoint by itself, I added this snippet to the PsychoJS code. This goes in uploadData(key, value) of <a href=https://github.com/psychopy/psychojs/blob/8943dee36b5aa0a44a0cc34a5d5773cb1bb45465/src/core/ServerManager.js><code>ServerManager.js</code></a>.</p>
+</code></pre></div><p>But how will this Netlify function be called? The psychojs program must call this endpoint (/api/upload-csv) by itself, so I added this snippet to the PsychoJS code. This goes in uploadData(key, value) of <a href=https://github.com/psychopy/psychojs/blob/8943dee36b5aa0a44a0cc34a5d5773cb1bb45465/src/core/ServerManager.js><code>ServerManager.js</code></a>. Towards the end of the experiment when <code>uploadData</code> is executed, the Netlify function should be called.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>self</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>URL</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/api/upload-csv&#39;</span> <span style=color:#75715e>// Netlify function is located here!!!
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>URL</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/api/upload-csv&#39;</span> <span style=color:#75715e>// Netlify function is located at this endpoint !!!
 </span><span style=color:#75715e></span>			
 <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Promise((<span style=color:#a6e22e>resolve</span>, <span style=color:#a6e22e>reject</span>) =&gt; {
     <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>type</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;text/csv&#34;</span>
-    <span style=color:#75715e>// value is the comma separated value passed into the function
+    <span style=color:#75715e>// &#34;value&#34; is the comma separated value passed into the function
 </span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>blob</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Blob</span>([<span style=color:#a6e22e>value</span>], { <span style=color:#a6e22e>type</span> });
     <span style=color:#a6e22e>fetch</span>(<span style=color:#a6e22e>URL</span>, {
-        <span style=color:#a6e22e>method</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;post&#39;</span>,
-        <span style=color:#a6e22e>headers</span><span style=color:#f92672>:</span> {
+        <span style=color:#a6e22e>method</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;post&#39;</span>, <span style=color:#75715e>// make a post request to the endpoint above
+</span><span style=color:#75715e></span>        <span style=color:#a6e22e>headers</span><span style=color:#f92672>:</span> {
             <span style=color:#e6db74>&#39;Accept&#39;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;application/json, text/plain, */*&#39;</span>,
             <span style=color:#e6db74>&#39;Content-Type&#39;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;application/json&#39;</span>
         },
-        <span style=color:#a6e22e>body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>({ <span style=color:#a6e22e>filename</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>csv</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>value</span> })
-    }).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> =&gt; <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>())
+        <span style=color:#a6e22e>body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>({ <span style=color:#a6e22e>filename</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>csv</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>value</span> }) <span style=color:#75715e>// the data
+</span><span style=color:#75715e></span>    }).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> =&gt; <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>())
         .<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> =&gt; <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>res</span>));
 });
 </code></pre></div><h2 id=how-to-use-the-program>
 How to use the program
 <a class=anchor href=#how-to-use-the-program>#</a>
 </h2>
-<p>I actually have a version deployed right now. It is located on the domain <code>psych dot netlify dot app</code> (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this minus the developer tools on the right side, which was for debugging purposes.</p>
+<p>I actually have a version deployed right now. It is located on the domain <code>psych dot netlify dot app</code> (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this without the developer tools on the right side, which was for debugging purposes.</p>
 <div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
 <iframe src=https://www.youtube.com/embed/1Xv_Zl6Qtvs style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
 </div>
@@ -190,7 +190,7 @@ How to use the program
 How to install it on your own
 <a class=anchor href=#how-to-install-it-on-your-own>#</a>
 </h2>
-<p>Great, now you&rsquo;re ready to download the code and make some tweaks. Before you clone the repository containing the code, there are some prerequisites:</p>
+<p>Great, now you&rsquo;re ready to download the code and make some of your own changes. Before you clone the repository containing the code, there are some prerequisites:</p>
 <ol>
 <li>If you&rsquo;re on mac, <a href=https://brew.sh/>brew</a> package manager. If you&rsquo;re on windows move to the next step.</li>
 <li>Node and npm, for javascript runtime (local server)</li>
@@ -205,7 +205,7 @@ node --version <span style=color:#75715e># to check if it&#39;s there</span>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Install the Netlify CLI</span>
 npm install netlify-cli -g
 </code></pre></div><p> </p>
-<p>Once you have all of these, you&rsquo;re can now test the core psychojs program and the netlify functions (these are included in the repository). First clone this <a href=https://github.com/tmprk/line-in-shape-psychojs/>this</a> github repository.</p>
+<p>Once you have all of these, you&rsquo;re now ready to test the core psychojs program and the Netlify functions (these are included in the repository). First clone this <a href=https://github.com/tmprk/line-in-shape-psychojs/>this</a> github repository.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/tmprk/line-in-shape-psychojs/tree/serverless
 
 cd line-in-shape-psychojs <span style=color:#75715e># change directory to the code</span>
@@ -222,7 +222,7 @@ ls <span style=color:#75715e># list contents of directory</span>
     ├── stimulus.js
     ├── visual-search-legacy-browsers.js
     └── visual-search.js
-</code></pre></div><p>If you try to run <code>netlify dev</code> or any local server to test out your program, it will not work, as many of the essential javascript dependencies are missing. The code you cloned does not include these dependences (because they take up space) but has a list of them in <code>package.json</code>. Run <code>npm install</code> in the root of the project. You should now see <code>node_modules</code>, which are used by the program.</p>
+</code></pre></div><p>If you try to run <code>netlify dev</code> or any local server to test out your program, it will not work, as many of the essential javascript dependencies are missing. The code you cloned does not include these dependences (because they take up space) but keeps a list of them in <code>package.json</code>. Run <code>npm install</code> in the root of the project. You should now see <code>node_modules</code>, which are used by the program.</p>
 <p>Next, run the Netlify dev tools in the root of the project</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>netlify dev
 
@@ -238,7 +238,7 @@ ls <span style=color:#75715e># list contents of directory</span>
 ◈ Unable to determine public folder to serve files from. Using current working directory
 ◈ Setup a netlify.toml file with a <span style=color:#f92672>[</span>dev<span style=color:#f92672>]</span> section to specify your dev server settings.
 ◈ See docs at: https://cli.netlify.com/netlify-dev#project-detection
-◈ Running static server from <span style=color:#e6db74>&#34;line-in-shape-personal&#34;</span>
+◈ Running static server from <span style=color:#e6db74>&#34;line-in-shape&#34;</span>
 ◈ Loaded <span style=color:#66d9ef>function</span> upload-csv.
 ◈ Functions server is listening on <span style=color:#ae81ff>52182</span>
 
