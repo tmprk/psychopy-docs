@@ -105,7 +105,7 @@ return new Promise((resolve, reject) => {
 
 ## How to use the program
 
-I actually have a version deployed right now. It is located on the domain `psych dot netlify dot com` (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this minus the developer tools on the right side, which was for debugging purposes.
+I actually have a version deployed right now. It is located on the domain `psych dot netlify dot app` (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this minus the developer tools on the right side, which was for debugging purposes.
 
 {{< youtube 1Xv_Zl6Qtvs >}}
 
