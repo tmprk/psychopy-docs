@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="Line-in-shape written using PsychoPy programmatically #  The requirements for a visual search line-in-shape task were a little more demanding than the chapter 9 example.
-For example, the number of shapes is not predetermined as was in the previous example. Instead of creating 1-8 distractors and placing them in random locations, the line-in-shape program requires anywhere from 8 to 20 shapes that are oriented in a circle.
-But the radius of the circle must increase the more stimuli there are.">
+For example, the number of shapes is not predetermined (from an array of coordinates) as it was in the previous example. Instead of creating 1-8 distractors and placing them in random locations, the line-in-shape program requires anywhere from 8 to 20 shapes that are oriented in a circle.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="Line-in-shape written using PsychoPy">
 <meta property="og:description" content>
@@ -15,7 +14,7 @@ But the radius of the circle must increase the more stimuli there are.">
 <link rel=icon href=/psychopy-docs/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/psychopy-docs/book.min.95d69eb6bad8b9707ff2b5d8d9e31ce70a1b84f2ed7ffaf665ffcf00aa7993bd.css integrity="sha256-ldaetrrYuXB/8rXY2eMc5wobhPLtf/r2Zf/PAKp5k70=" crossorigin=anonymous>
 <script defer src=/psychopy-docs/flexsearch.min.js></script>
-<script defer src=/psychopy-docs/en.search.min.6b725ed889bfc024ad9469e1a605379124c301ad67e397792742bfd3a0b004e6.js integrity="sha256-a3Je2Im/wCStlGnhpgU3kSTDAa1n45d5J0K/06CwBOY=" crossorigin=anonymous></script>
+<script defer src=/psychopy-docs/en.search.min.0b29d379dd20a0719795cb0b1afe54cb5ebb4cdc321e0018dedab91a78aab8a1.js integrity="sha256-CynTed0goHGXlcsLGv5Uy167TNwyHgAY3tq5GniquKE=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=http://localhost:1313/psychopy-docs/docs/programs/line-in-shape/index.xml title="Psych 499 Log">
 </head>
 <body dir=ltr>
@@ -83,13 +82,13 @@ Line-in-shape written using PsychoPy programmatically
 <a class=anchor href=#line-in-shape-written-using-psychopy-programmatically>#</a>
 </h2>
 <p>The requirements for a visual search line-in-shape task were a little more demanding than the chapter 9 example.</p>
-<p>For example, the number of shapes is not predetermined as was in the previous example. Instead of creating 1-8 distractors and placing them in random locations, the line-in-shape program requires anywhere from 8 to 20 shapes that are oriented in a circle.</p>
-<p>But the radius of the circle must increase the more stimuli there are. In addition to determining the location of the stimuli and target based on the # of shapes, some trials have distractors and some do not. The lines are inside each of the stimuli must also be either 22.5 degrees from horizontal or vertical.</p>
+<p>For example, the number of shapes is not predetermined (from an array of coordinates) as it was in the previous example. Instead of creating 1-8 distractors and placing them in <em>random</em> locations, the line-in-shape program requires anywhere from 8 to 20 shapes that are oriented in a circle.</p>
+<p>To display the stimuli in a circle, the positions must be calculated. This, however, depends on the number of stimuli which is determined randomly. In addition to determining the location of the stimuli and target based on the number of shapes, some trials have distractors and some do not. The lines are inside each of the stimuli must also be either 22.5 degrees from horizontal or vertical.</p>
 <h2 id=some-dilemmas>
 Some dilemmas
 <a class=anchor href=#some-dilemmas>#</a>
 </h2>
-<p>The first problem when trying to make this in builder would be: Should I make 20 components despite only having 8 or 12 for some trials? Setting the opacity to 0 for the unused one may work, but that means the coordinates of the shapes must be stored in a conditions file and each of the possibilities must be enumerated in the csv. Another problem would be manually adding the shape and line components (over 40) and setting the properties for each. This seemed very tedious and could be resolved using a simple for loop in code (the book also mentions this).</p>
+<p>The first problem that arises when trying to make this in builder interface would be: Should I make 20 components despite only having 8 or 12 for some trials? Setting the opacity to 0 for the unused one may work, but that means the coordinates of all the shapes must be stored in a conditions file and each of the possibilities must be enumerated in the csv. Another problem would be having to manually add the shape and line components (over 40) and setting the properties for each. This seemed very tedious and could be resolved using a simple for loop in code (the book also mentions this).</p>
 <p>Next, onto the official guidelines.</p>
 <h2 id=guidelines>
 Guidelines
