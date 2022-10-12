@@ -1,348 +1,132 @@
-<!doctype html><html lang=en dir=ltr>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Line-in-shape written using PsychoJS #  Problem #  A Python script that runs psychopy code can only be used on the device it is installed on and cannot be deployed on the web. Even the GUI library that psychopy uses to create a window is specific to desktop computers.
-As a result, the PsychoPy organization created some scripts to convert a psychopy project to psychojs. Everything would be fine if the program written in the previous section could be converted to javascript and uploaded to pavlovia.">
-<meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Line-in-shape running on the web (PsychoJS)">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:1313/psychopy-docs/docs/programs/line-in-shape-js/">
-<title>Line-in-shape running on the web (PsychoJS) | Psych 499 Log</title>
-<link rel=manifest href=/psychopy-docs/manifest.json>
-<link rel=icon href=/psychopy-docs/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/psychopy-docs/book.min.95d69eb6bad8b9707ff2b5d8d9e31ce70a1b84f2ed7ffaf665ffcf00aa7993bd.css integrity="sha256-ldaetrrYuXB/8rXY2eMc5wobhPLtf/r2Zf/PAKp5k70=" crossorigin=anonymous>
-<script defer src=/psychopy-docs/flexsearch.min.js></script>
-<script defer src=/psychopy-docs/en.search.min.461754b451e3c263e775c395143f887ab74ef11f32212a014f0b2cbdb00869cf.js integrity="sha256-RhdUtFHjwmPndcOVFD+IerdO8R8yISoBTwssvbAIac8=" crossorigin=anonymous></script>
-<link rel=alternate type=application/rss+xml href=http://localhost:1313/psychopy-docs/docs/programs/line-in-shape-js/index.xml title="Psych 499 Log">
-</head>
-<body dir=ltr>
-<input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control>
-<main class="container flex">
-<aside class=book-menu>
-<div class=book-menu-content>
-<nav>
-<h2 class=book-brand>
-<a class="flex align-center" href=/psychopy-docs/><span>Psych 499 Log</span>
-</a>
-</h2>
-<div class=book-search>
-<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div>
-<ul id=book-search-results></ul>
-</div>
-<ul>
-<li>
-<p><strong>Setup PsychoPy</strong></p>
-<ul>
-<li><a href=/psychopy-docs/docs/setup/mac-setup/>on Mac</a></li>
-<li><a href=/psychopy-docs/docs/setup/windows-setup/>on Windows</a>
-<br></li>
-</ul>
-</li>
-<li>
-<p><strong>Programs</strong></p>
-<ul>
-<li><a href=/psychopy-docs/docs/programs/visual-search/>Visual Search</a></li>
-<li><a href=/psychopy-docs/docs/programs/line-in-shape/>Line-in-shape</a></li>
-<li><a href=/psychopy-docs/docs/programs/line-in-shape-js/ class=active>Line-in-shape Web</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div>
-</aside>
-<div class=book-page>
-<header class=book-header>
-<div class="flex align-center justify-between">
-<label for=menu-control>
-<img src=/psychopy-docs/svg/menu.svg class=book-icon alt=Menu>
-</label>
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Line-in-shape written using PsychoJS # Problem # A Python script that runs psychopy code can only be used on the device it is installed on and cannot be deployed on the web. Even the GUI library that psychopy uses to create a window is specific to desktop computers.
+As a result, the PsychoPy organization created some scripts to convert a psychopy project to psychojs. Everything would be fine if the program written in the previous section could be converted to javascript and uploaded to pavlovia."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Line-in-shape running on the web (PsychoJS)"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:1313/psychopy-docs/docs/programs/line-in-shape-js/"><title>Line-in-shape running on the web (PsychoJS) | Psych 499 Log</title><link rel=manifest href=/psychopy-docs/manifest.json><link rel=icon href=/psychopy-docs/favicon.png type=image/x-icon><link rel=stylesheet href=/psychopy-docs/book.min.95d69eb6bad8b9707ff2b5d8d9e31ce70a1b84f2ed7ffaf665ffcf00aa7993bd.css integrity="sha256-ldaetrrYuXB/8rXY2eMc5wobhPLtf/r2Zf/PAKp5k70=" crossorigin=anonymous><script defer src=/psychopy-docs/flexsearch.min.js></script>
+<script defer src=/psychopy-docs/en.search.min.3765db930dd9fa501c443213df2e7733fdba179b0648f1b8d2c98c381872940d.js integrity="sha256-N2Xbkw3Z+lAcRDIT3y53M/26F5sGSPG40smMOBhylA0=" crossorigin=anonymous></script>
+<link rel=alternate type=application/rss+xml href=http://localhost:1313/psychopy-docs/docs/programs/line-in-shape-js/index.xml title="Psych 499 Log"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/psychopy-docs/><span>Psych 499 Log</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><p><strong>Setup PsychoPy</strong></p><ul><li><a href=/psychopy-docs/docs/setup/mac-setup/>on Mac</a></li><li><a href=/psychopy-docs/docs/setup/windows-setup/>on Windows</a><br></li></ul></li><li><p><strong>Running PsychoPy Programs</strong></p><ul><li><a href=/psychopy-docs/docs/programs/visual-search/>Visual Search</a></li><li><a href=/psychopy-docs/docs/programs/line-in-shape/>Line-in-shape</a></li><li><a href=/psychopy-docs/docs/programs/line-in-shape-js/ class=active>Line-in-shape Web</a></li></ul></li><li><p><strong>HRS secondary data analysis</strong></p><ul><li><a href=/psychopy-docs/docs/hrs/environment/>Setup</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/psychopy-docs/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Line-in-shape running on the web (PsychoJS)</strong>
-<label for=toc-control>
-<img src=/psychopy-docs/svg/toc.svg class=book-icon alt="Table of Contents">
-</label>
-</div>
-<aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#problem>Problem</a></li>
-<li><a href=#solution>Solution</a></li>
-<li><a href=#key-parts-of-the-solution>Key parts of the solution</a></li>
-<li><a href=#how-to-use-the-program>How to use the program</a></li>
-<li><a href=#how-to-install-it-on-your-own>How to install it on your own</a></li>
-<li><a href=#collecting-csv-data-and-self-hosting-methods>Collecting CSV data (and self-hosting methods)</a></li>
-<li><a href=#let-netlify-read-your-github-repo>Let Netlify read your Github repo</a></li>
-<li><a href=#moving-forward>Moving forward</a></li>
-</ul>
-</nav>
-</aside>
-</header>
-<article class=markdown><h1 id=line-in-shape-written-using-psychojs>
-Line-in-shape written using PsychoJS
-<a class=anchor href=#line-in-shape-written-using-psychojs>#</a>
-</h1>
-<h2 id=problem>
-Problem
-<a class=anchor href=#problem>#</a>
-</h2>
-<p>A Python script that runs psychopy code can only be used on the device it is installed on and cannot be deployed on the web. Even the GUI library that psychopy uses to create a window is specific to desktop computers.</p>
-<p>As a result, the PsychoPy organization created some scripts to convert a psychopy project to psychojs. Everything would be fine if the program written in the previous section could be converted to javascript and uploaded to pavlovia.</p>
-<p>It turns out that only experiments made in the PsychoPy <em>Builder</em>, can be converted using a script. Initially, I thought that any code that involves psychopy could be converted to psychoJS and then run on Pavlovia but I was wrong about this.</p>
-<h2 id=solution>
-Solution
-<a class=anchor href=#solution>#</a>
-</h2>
-<p>The Javascript framework, <a href=https://psychopy.github.io/psychojs/>PsychoJS</a> that psychopy is automatically converted to from the builder can be used to write your own programs from scratch.</p>
-<p>As a result, I decided to just translate the python code to javascript. The main logic was already written, so it just needed to be translated, with a few other nuances. Read <a href=https://www.psychopy.org/online/psychojsCode.html>manual coding of PsychoJS studies</a>, which described my situation perfectly.</p>
-<h2 id=key-parts-of-the-solution>
-Key parts of the solution
-<a class=anchor href=#key-parts-of-the-solution>#</a>
-</h2>
-<p>PsychoJS library doesn&rsquo;t require any server-side code to display shapes and accept keystrokes, etc. As a result, I decided to dabble in serverless and host the core program on Netlify, utlizing Netlify Functions ✨ for uploading data. In the words of Netlify:</p>
-<blockquote>
-<p><em>Deploy server-side code that works as API endpoints, runs automatically in response to events, or processes more complex jobs in the background.</em></p>
-<p><em>Functions receive request context or event data, and return data back to your front end.</em></p>
-</blockquote>
-<p>This is perfect because everything up until the CSV upload is local; displaying shapes, keystroke input, trial results, and CSV formatting are all done in javascript on the browser. Once all the this happens, the plan was to call a Netlify function endpoint (passing in the CSV data through the event body) and my function would handle the data and upload it somewhere safe.</p>
-<p>In addition to the actual program written in PsychoJS, here is a simple Netlify function I used:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#75715e>// Grab our credentials from a .env file or environment variables
-</span><span style=color:#75715e></span><span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;dotenv&#39;</span>).<span style=color:#a6e22e>config</span>();
-<span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>DATABASE_URL</span>, <span style=color:#a6e22e>SUPABASE_SERVICE_API_KEY</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>process</span>.<span style=color:#a6e22e>env</span>;
-
-<span style=color:#75715e>// Connect to our database
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>createClient</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;@supabase/supabase-js&#39;</span>);
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>supabase</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createClient</span>(<span style=color:#a6e22e>DATABASE_URL</span>, <span style=color:#a6e22e>SUPABASE_SERVICE_API_KEY</span>);
-
-<span style=color:#75715e>// Our standard serverless handler function
-</span><span style=color:#75715e></span><span style=color:#a6e22e>exports</span>.<span style=color:#a6e22e>handler</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>event</span> =&gt; {
-    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>httpMethod</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;POST&#39;</span>) {
-        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#66d9ef>typeof</span>(<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>))
-        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;body:&#39;</span>, <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>, <span style=color:#e6db74>&#39;\n&#39;</span>)
-        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;filename:&#39;</span>, <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>).<span style=color:#a6e22e>filename</span>, <span style=color:#e6db74>&#39;\n&#39;</span>)
-        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;contents:&#39;</span>, <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>).<span style=color:#a6e22e>csv</span>, <span style=color:#e6db74>&#39;\n&#39;</span>)
-
-        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>body</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>)
-        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>filename</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>filename</span>
-        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>contents</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>csv</span>
-
-        <span style=color:#75715e>// Insert a row
-</span><span style=color:#75715e></span>        <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>data</span>, <span style=color:#a6e22e>error</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>supabase</span>.<span style=color:#a6e22e>storage</span>
-            .<span style=color:#a6e22e>from</span>(<span style=color:#e6db74>&#39;results&#39;</span>)
-            .<span style=color:#a6e22e>upload</span>(<span style=color:#a6e22e>filename</span>, <span style=color:#a6e22e>contents</span>, {
-                <span style=color:#a6e22e>contentType</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;text/csv&#39;</span>
-            })
-
-        <span style=color:#75715e>// Did it work?
-</span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>data</span>) {
-            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>data</span>);
-            <span style=color:#66d9ef>return</span> {
-                <span style=color:#a6e22e>statusCode</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>200</span>,
-                <span style=color:#a6e22e>body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>({
-                    <span style=color:#a6e22e>message</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;sent a post request containing blob&#39;</span>
-                }),
-            }
-        } <span style=color:#66d9ef>else</span> {
-            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>error</span>);
-            <span style=color:#66d9ef>return</span> {
-                <span style=color:#a6e22e>statusCode</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>500</span>,
-                <span style=color:#a6e22e>body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>({
-                    <span style=color:#a6e22e>message</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;POST didn&#39;t go through&#34;</span>
-                }),
-            }
-        }
-    }
-}
-</code></pre></div><p>But how will this Netlify function be called? The psychojs program must call this endpoint (/api/upload-csv) by itself, so I added this snippet to the PsychoJS code. This goes in uploadData(key, value) of <a href=https://github.com/psychopy/psychojs/blob/8943dee36b5aa0a44a0cc34a5d5773cb1bb45465/src/core/ServerManager.js><code>ServerManager.js</code></a>. Towards the end of the experiment when <code>uploadData</code> is executed, the Netlify function should be called.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>self</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>URL</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/api/upload-csv&#39;</span> <span style=color:#75715e>// Netlify function is located at this endpoint !!!
-</span><span style=color:#75715e></span>			
-<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Promise((<span style=color:#a6e22e>resolve</span>, <span style=color:#a6e22e>reject</span>) =&gt; {
-    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>type</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;text/csv&#34;</span>
-    <span style=color:#75715e>// &#34;value&#34; is the comma separated value passed into the function
-</span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>blob</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Blob</span>([<span style=color:#a6e22e>value</span>], { <span style=color:#a6e22e>type</span> });
-    <span style=color:#a6e22e>fetch</span>(<span style=color:#a6e22e>URL</span>, {
-        <span style=color:#a6e22e>method</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;post&#39;</span>, <span style=color:#75715e>// make a post request to the endpoint above
-</span><span style=color:#75715e></span>        <span style=color:#a6e22e>headers</span><span style=color:#f92672>:</span> {
-            <span style=color:#e6db74>&#39;Accept&#39;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;application/json, text/plain, */*&#39;</span>,
-            <span style=color:#e6db74>&#39;Content-Type&#39;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;application/json&#39;</span>
-        },
-        <span style=color:#a6e22e>body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>({ <span style=color:#a6e22e>filename</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>csv</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>value</span> }) <span style=color:#75715e>// the data
-</span><span style=color:#75715e></span>    }).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> =&gt; <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>())
-        .<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> =&gt; <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>res</span>));
-});
-</code></pre></div><h2 id=how-to-use-the-program>
-How to use the program
-<a class=anchor href=#how-to-use-the-program>#</a>
-</h2>
-<p>I actually have a version deployed right now. It is located on the domain <code>psych dot netlify dot app</code> (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this without the developer tools on the right side, which was for debugging purposes.</p>
-<div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
-<iframe src=https://www.youtube.com/embed/1Xv_Zl6Qtvs style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
-</div>
-<p>The program will let you know when the experiment has ended. However, where is the data hosted? As you may have seen earlier in the Netlify function, <a href=https://supabase.com/>supabase</a> is used as a datastore. The deployed version will send data to my Supabase bucket. When I navigate to my supabase storage dashboard, I see a list of CSVs that can be downloaded:</p>
-<p align=center>
-<img width=500px style=border-radius:10px src=images/storage.png>
-</p>
-<h2 id=how-to-install-it-on-your-own>
-How to install it on your own
-<a class=anchor href=#how-to-install-it-on-your-own>#</a>
-</h2>
-<p>Great, now you&rsquo;re ready to download the code and make some of your own changes. Before you clone the repository containing the code, there are some prerequisites:</p>
-<ol>
-<li>If you&rsquo;re on mac, <a href=https://brew.sh/>brew</a> package manager. If you&rsquo;re on windows move to the next step.</li>
-<li>Node and npm, for javascript runtime (local server)</li>
-</ol>
-<p>For mac users:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install node
-node --version <span style=color:#75715e># to check if it&#39;s there</span>
-</code></pre></div><p>For windows users: navigate to <a href=https://nodejs.org/en/download/>nodejs.org</a> and get the latest version.</p>
-<ol start=3>
-<li>Open Terminal on mac, or Command prompt on Windows and download the Netlify dev cli (for testing locally).</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Install the Netlify CLI</span>
-npm install netlify-cli -g
-</code></pre></div><p> </p>
-<p>Once you have all of these, you&rsquo;re now ready to test the core psychojs program and the Netlify functions (these are included in the repository). First clone this <a href=https://github.com/tmprk/line-in-shape-psychojs/>this</a> github repository.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/tmprk/line-in-shape-psychojs/tree/serverless
-
-cd line-in-shape-psychojs <span style=color:#75715e># change directory to the code</span>
-ls <span style=color:#75715e># list contents of directory</span>
-
-<span style=color:#75715e># this should be what it looks like</span>
-└── psychopy
-    ├── functions
-    ├── library
-    ├── scripts
-    ├── index.html
-    ├── netlify.toml
-    ├── package.json
-    ├── stimulus.js
-    ├── visual-search-legacy-browsers.js
-    └── visual-search.js
-</code></pre></div><p>If you try to run <code>netlify dev</code> or any local server to test out your program, it will not work, as many of the essential javascript dependencies are missing. The code you cloned does not include these dependences (because they take up space) but keeps a list of them in <code>package.json</code>. Run <code>npm install</code> in the root of the project. You should now see <code>node_modules</code>, which are used by the program.</p>
-<p>Next, run the Netlify dev tools in the root of the project</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>netlify dev
-
-<span style=color:#75715e># it should output something like this</span>
-◈ Netlify Dev ◈
-◈ Ignored build settings env var: DATABASE_URL <span style=color:#f92672>(</span>defined in .env file<span style=color:#f92672>)</span>
-◈ Injected .env file env var: DATABASE_URL
-◈ Ignored build settings env var: SUPABASE_SERVICE_API_KEY <span style=color:#f92672>(</span>defined in .env file<span style=color:#f92672>)</span>
-◈ Injected .env file env var: SUPABASE_SERVICE_API_KEY
-◈ Ignored general context env var: LANG <span style=color:#f92672>(</span>defined in process<span style=color:#f92672>)</span>
-◈ Ignored general context env var: LC_ALL <span style=color:#f92672>(</span>defined in process<span style=color:#f92672>)</span>
-◈ No app server detected. Using simple static server
-◈ Unable to determine public folder to serve files from. Using current working directory
-◈ Setup a netlify.toml file with a <span style=color:#f92672>[</span>dev<span style=color:#f92672>]</span> section to specify your dev server settings.
-◈ See docs at: https://cli.netlify.com/netlify-dev#project-detection
-◈ Running static server from <span style=color:#e6db74>&#34;line-in-shape&#34;</span>
-◈ Loaded <span style=color:#66d9ef>function</span> upload-csv.
-◈ Functions server is listening on <span style=color:#ae81ff>52182</span>
-
-◈ Static server listening to <span style=color:#ae81ff>3999</span>
-</code></pre></div><p>Navigate to http://localhost:3999, or replace 3999 with whatever the output says the static server is running on. You should now see the PsychoJS program! One problem, when you finish the experiment and the program tries to upload, it is unable to because no API keys are provided. To do this, you need your own supabase account and create a bucket to hold the CSVs. This next part should help accomplish that.</p>
-<h2 id=collecting-csv-data-and-self-hosting-methods>
-Collecting CSV data (and self-hosting methods)
-<a class=anchor href=#collecting-csv-data-and-self-hosting-methods>#</a>
-</h2>
-<p>To get a datastore yourself or your own organization, there are many options. You can you Amazon AWS, MongoDB, Fauna DB, the list goes on. I just chose supabase because I was having issues getting AWS Dynamo DB to work. First, sign up with Supabase using the third-party Github login. On your supabase dashboard, click &ldquo;New Project&rdquo; and name it accordingly.</p>
-<p align=center>
-<img width=500px style=border-radius:10px src=images/new-project.png>
-</p>
-<p>After creating a project, a storage bucket must be created. Go to the storage icon on the left navigation bar, and click &ldquo;Create a new bucket&rdquo;</p>
-<p align=center>
-<img width=500px style=border-radius:10px src=images/new-bucket.png>
-</p>
-<p>Now that these things are created, we need to retrieve the database URL, API keys and access token. The database URL is an individual identifier for your project, and the API keys and access token are secret key that can be used to interact with the database (read and write data) and are used in the code. To get these things, look for the settings icon on the left. Click the icon > click API. You should see various fields that can be copied.</p>
-<p align=center>
-<img width=500px style=border-radius:10px src=images/keys.png>
-</p>
-<p>The top one (3) is the API key. The bottom one (4) is the database URL. These will both need to be added to your code so you can send the data to your own instance. To do this, create an <code>.env</code> file in the root of your project. This is an environment file and contains keys that should not be exposed to the public. Once you place these in the .env file, they will be read by the netlify function, so that it can run the code that uploads the CSV.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># in root of project in terminal</span>
-touch .env
-nano .env <span style=color:#75715e># or open in your text editor</span>
-
-<span style=color:#75715e># paste these using nano, or in editor</span>
-DATABASE_URL<span style=color:#f92672>={</span>the data base URL you copied<span style=color:#f92672>}</span>
-SUPABASE_SERVICE_API_KEY<span style=color:#f92672>={</span>your api key<span style=color:#f92672>}</span>
-</code></pre></div><h2 id=let-netlify-read-your-github-repo>
-Let Netlify read your Github repo
-<a class=anchor href=#let-netlify-read-your-github-repo>#</a>
-</h2>
-<p>Now that you have it running locally, it should also be able to upload the CSVs to your supabase bucket as well. To get this deployed on netlify (for now, since we&rsquo;re using netlify functions), you will have to first push the code to Github. After adding your API keys to the <code>.env</code> file, the code is now ready for upload.</p>
-<p>Create a new Github repo on the website. Name it whatever you like. It lists out several ways to get your code onto the empty repo. What you&rsquo;re interested in is the bottom section.</p>
-<p align=center>
-<img width=500px style=border-radius:10px src=images/add-remote-url.png>
-</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># since you cloned the repo, you need a *new* remote url to push to</span>
-
-<span style=color:#75715e># in the root of the project</span>
-git remote set-url origin git@github.com<span style=color:#f92672>{</span>your-username<span style=color:#f92672>}</span>/<span style=color:#f92672>{</span>repo name<span style=color:#f92672>}</span>.git
-git branch -M main
-git push -u origin main
-</code></pre></div><p>Now you have to sign up with Netlify. They have a generous free tier of 125,000 requests per month, plenty of bandwidth for your site, and build minutes. Once you sign up, there will be a button that says &ldquo;new site from git&rdquo;. It will direct you to several options to authenticate with, so Netlify can read only the github repos you permit.</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>new site from git</th>
-<th style=text-align:center>connect repo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center><img src=images/new-site-from-git.png alt="new site from git"></td>
-<td style=text-align:center><img src=images/connect-repo.png alt="connect repo"></td>
-</tr>
-</tbody>
-</table>
-<p>Once you select the repo that you gave Netlify access to, it will start building the site. It creates a build environment to set everything up. If everything goes to plan, the build should have succeeded. It should provide you a URL, which can be renamed in the site settings.</p>
-<p align=center>
-<img width=500px style=border-radius:10px src=images/deployed.png>
-</p>
-<p>You can now access this site from anywhere in the world! If you&rsquo;ve made it this far, then congratulations.</p>
-<h2 id=moving-forward>
-Moving forward
-<a class=anchor href=#moving-forward>#</a>
-</h2>
-<p>If there are any suggestions, improvements, or issues encountered along the way, feel free to reach out via <a href=mailto:parkimothy@gmail.com>email</a>.</p>
-<p>Some things I would like to add to this (tentative list):</p>
-<ol>
-<li>Authentication via code given by research coordinator
-<ul>
-<li>With the domain in the public, anyone can access and the program may be prone to bots and DOS&rsquo;ing (highly unlikely for something so niche but could happen).</li>
-<li>Since it&rsquo;s static, we can&rsquo;t perform authentication so we would have to resort to Netlify functions again. Entirely possible though.</li>
-</ul>
-</li>
-</ol>
-</article>
-<footer class=book-footer>
-<div class="flex flex-wrap justify-between">
-</div>
-<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-</footer>
-<div class=book-comments>
-</div>
-<label for=menu-control class="hidden book-menu-overlay"></label>
-</div>
-<aside class=book-toc>
-<div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#problem>Problem</a></li>
-<li><a href=#solution>Solution</a></li>
-<li><a href=#key-parts-of-the-solution>Key parts of the solution</a></li>
-<li><a href=#how-to-use-the-program>How to use the program</a></li>
-<li><a href=#how-to-install-it-on-your-own>How to install it on your own</a></li>
-<li><a href=#collecting-csv-data-and-self-hosting-methods>Collecting CSV data (and self-hosting methods)</a></li>
-<li><a href=#let-netlify-read-your-github-repo>Let Netlify read your Github repo</a></li>
-<li><a href=#moving-forward>Moving forward</a></li>
-</ul>
-</nav>
-</div>
-</aside>
-</main>
-</body>
-</html>
+<label for=toc-control><img src=/psychopy-docs/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#problem>Problem</a></li><li><a href=#solution>Solution</a></li><li><a href=#key-parts-of-the-solution>Key parts of the solution</a></li><li><a href=#how-to-use-the-program>How to use the program</a></li><li><a href=#how-to-install-it-on-your-own>How to install it on your own</a></li><li><a href=#collecting-csv-data-and-self-hosting-methods>Collecting CSV data (and self-hosting methods)</a></li><li><a href=#let-netlify-read-your-github-repo>Let Netlify read your Github repo</a></li><li><a href=#moving-forward>Moving forward</a></li></ul></nav></aside></header><article class=markdown><h1 id=line-in-shape-written-using-psychojs>Line-in-shape written using PsychoJS
+<a class=anchor href=#line-in-shape-written-using-psychojs>#</a></h1><h2 id=problem>Problem
+<a class=anchor href=#problem>#</a></h2><p>A Python script that runs psychopy code can only be used on the device it is installed on and cannot be deployed on the web. Even the GUI library that psychopy uses to create a window is specific to desktop computers.</p><p>As a result, the PsychoPy organization created some scripts to convert a psychopy project to psychojs. Everything would be fine if the program written in the previous section could be converted to javascript and uploaded to pavlovia.</p><p>It turns out that only experiments made in the PsychoPy <em>Builder</em>, can be converted using a script. Initially, I thought that any code that involves psychopy could be converted to psychoJS and then run on Pavlovia but I was wrong about this.</p><h2 id=solution>Solution
+<a class=anchor href=#solution>#</a></h2><p>The Javascript framework, <a href=https://psychopy.github.io/psychojs/>PsychoJS</a> that psychopy is automatically converted to from the builder can be used to write your own programs from scratch.</p><p>As a result, I decided to just translate the python code to javascript. The main logic was already written, so it just needed to be translated, with a few other nuances. Read <a href=https://www.psychopy.org/online/psychojsCode.html>manual coding of PsychoJS studies</a>, which described my situation perfectly.</p><h2 id=key-parts-of-the-solution>Key parts of the solution
+<a class=anchor href=#key-parts-of-the-solution>#</a></h2><p>PsychoJS library doesn&rsquo;t require any server-side code to display shapes and accept keystrokes, etc. As a result, I decided to dabble in serverless and host the core program on Netlify, utlizing Netlify Functions ✨ for uploading data. In the words of Netlify:</p><blockquote><p><em>Deploy server-side code that works as API endpoints, runs automatically in response to events, or processes more complex jobs in the background.</em></p><p><em>Functions receive request context or event data, and return data back to your front end.</em></p></blockquote><p>This is perfect because everything up until the CSV upload is local; displaying shapes, keystroke input, trial results, and CSV formatting are all done in javascript on the browser. Once all the this happens, the plan was to call a Netlify function endpoint (passing in the CSV data through the event body) and my function would handle the data and upload it somewhere safe.</p><p>In addition to the actual program written in PsychoJS, here is a simple Netlify function I used:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// Grab our credentials from a .env file or environment variables
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;dotenv&#39;</span>).<span style=color:#a6e22e>config</span>();
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>DATABASE_URL</span>, <span style=color:#a6e22e>SUPABASE_SERVICE_API_KEY</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>process</span>.<span style=color:#a6e22e>env</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Connect to our database
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>createClient</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;@supabase/supabase-js&#39;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>supabase</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createClient</span>(<span style=color:#a6e22e>DATABASE_URL</span>, <span style=color:#a6e22e>SUPABASE_SERVICE_API_KEY</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Our standard serverless handler function
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>exports</span>.<span style=color:#a6e22e>handler</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>event</span> =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>httpMethod</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;POST&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#66d9ef>typeof</span>(<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>))
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;body:&#39;</span>, <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>, <span style=color:#e6db74>&#39;\n&#39;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;filename:&#39;</span>, <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>).<span style=color:#a6e22e>filename</span>, <span style=color:#e6db74>&#39;\n&#39;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;contents:&#39;</span>, <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>).<span style=color:#a6e22e>csv</span>, <span style=color:#e6db74>&#39;\n&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>body</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>body</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>filename</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>filename</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>contents</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>csv</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Insert a row
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>data</span>, <span style=color:#a6e22e>error</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>supabase</span>.<span style=color:#a6e22e>storage</span>
+</span></span><span style=display:flex><span>            .<span style=color:#a6e22e>from</span>(<span style=color:#e6db74>&#39;results&#39;</span>)
+</span></span><span style=display:flex><span>            .<span style=color:#a6e22e>upload</span>(<span style=color:#a6e22e>filename</span>, <span style=color:#a6e22e>contents</span>, {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>contentType</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;text/csv&#39;</span>
+</span></span><span style=display:flex><span>            })
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Did it work?
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>data</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>data</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>statusCode</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>200</span>,
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>({
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>message</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;sent a post request containing blob&#39;</span>
+</span></span><span style=display:flex><span>                }),
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>error</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>statusCode</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>500</span>,
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>({
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>message</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;POST didn&#39;t go through&#34;</span>
+</span></span><span style=display:flex><span>                }),
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>But how will this Netlify function be called? The psychojs program must call this endpoint (/api/upload-csv) by itself, so I added this snippet to the PsychoJS code. This goes in uploadData(key, value) of <a href=https://github.com/psychopy/psychojs/blob/8943dee36b5aa0a44a0cc34a5d5773cb1bb45465/src/core/ServerManager.js><code>ServerManager.js</code></a>. Towards the end of the experiment when <code>uploadData</code> is executed, the Netlify function should be called.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>self</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>URL</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/api/upload-csv&#39;</span> <span style=color:#75715e>// Netlify function is located at this endpoint !!!
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>			
+</span></span><span style=display:flex><span><span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Promise((<span style=color:#a6e22e>resolve</span>, <span style=color:#a6e22e>reject</span>) =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>type</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;text/csv&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// &#34;value&#34; is the comma separated value passed into the function
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>blob</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Blob</span>([<span style=color:#a6e22e>value</span>], { <span style=color:#a6e22e>type</span> });
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fetch</span>(<span style=color:#a6e22e>URL</span>, {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>method</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;post&#39;</span>, <span style=color:#75715e>// make a post request to the endpoint above
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>headers</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#39;Accept&#39;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;application/json, text/plain, */*&#39;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#39;Content-Type&#39;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;application/json&#39;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>({ <span style=color:#a6e22e>filename</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>csv</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>value</span> }) <span style=color:#75715e>// the data
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    }).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> =&gt; <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>())
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> =&gt; <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>res</span>));
+</span></span><span style=display:flex><span>});
+</span></span></code></pre></div><h2 id=how-to-use-the-program>How to use the program
+<a class=anchor href=#how-to-use-the-program>#</a></h2><p>I actually have a version deployed right now. It is located on the domain <code>psych dot netlify dot app</code> (doing this to prevent bots). Just navigate to this domain and you can try it out. It will look something like this without the developer tools on the right side, which was for debugging purposes.</p><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe src=https://www.youtube.com/embed/1Xv_Zl6Qtvs style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe></div><p>The program will let you know when the experiment has ended. However, where is the data hosted? As you may have seen earlier in the Netlify function, <a href=https://supabase.com/>supabase</a> is used as a datastore. The deployed version will send data to my Supabase bucket. When I navigate to my supabase storage dashboard, I see a list of CSVs that can be downloaded:</p><p align=center><img width=500px style=border-radius:10px src=images/storage.png></p><h2 id=how-to-install-it-on-your-own>How to install it on your own
+<a class=anchor href=#how-to-install-it-on-your-own>#</a></h2><p>Great, now you&rsquo;re ready to download the code and make some of your own changes. Before you clone the repository containing the code, there are some prerequisites:</p><ol><li>If you&rsquo;re on mac, <a href=https://brew.sh/>brew</a> package manager. If you&rsquo;re on Windows move to the next step.</li><li>Node and npm, for javascript runtime (local server)</li></ol><p>For mac users:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>brew install node
+</span></span><span style=display:flex><span>node --version <span style=color:#75715e># to check if it&#39;s there</span>
+</span></span></code></pre></div><p>For windows users: navigate to <a href=https://nodejs.org/en/download/>nodejs.org</a> and get the latest version.</p><ol start=3><li>Open Terminal on mac, or Command prompt on Windows and download the Netlify dev cli (for testing locally).</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Install the Netlify CLI</span>
+</span></span><span style=display:flex><span>npm install netlify-cli -g
+</span></span></code></pre></div><p> </p><p>Once you have all of these, you&rsquo;re now ready to test the core psychojs program and the Netlify functions (these are included in the repository). First clone this <a href=https://github.com/tmprk/line-in-shape-psychojs/>this</a> github repository.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git clone https://github.com/tmprk/line-in-shape-psychojs/tree/serverless
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cd line-in-shape-psychojs <span style=color:#75715e># change directory to the code</span>
+</span></span><span style=display:flex><span>ls <span style=color:#75715e># list contents of directory</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># this should be what it looks like</span>
+</span></span><span style=display:flex><span>└── psychopy
+</span></span><span style=display:flex><span>    ├── functions
+</span></span><span style=display:flex><span>    ├── library
+</span></span><span style=display:flex><span>    ├── scripts
+</span></span><span style=display:flex><span>    ├── index.html
+</span></span><span style=display:flex><span>    ├── netlify.toml
+</span></span><span style=display:flex><span>    ├── package.json
+</span></span><span style=display:flex><span>    ├── stimulus.js
+</span></span><span style=display:flex><span>    ├── visual-search-legacy-browsers.js
+</span></span><span style=display:flex><span>    └── visual-search.js
+</span></span></code></pre></div><p>If you try to run <code>netlify dev</code> or any local server to test out your program, it will not work, as many of the essential javascript dependencies are missing. The code you cloned does not include these dependences (because they take up space) but keeps a list of them in <code>package.json</code>. Run <code>npm install</code> in the root of the project. You should now see <code>node_modules</code>, which are used by the program.</p><p>Next, run the Netlify dev tools in the root of the project</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>netlify dev
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># it should output something like this</span>
+</span></span><span style=display:flex><span>◈ Netlify Dev ◈
+</span></span><span style=display:flex><span>◈ Ignored build settings env var: DATABASE_URL <span style=color:#f92672>(</span>defined in .env file<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>◈ Injected .env file env var: DATABASE_URL
+</span></span><span style=display:flex><span>◈ Ignored build settings env var: SUPABASE_SERVICE_API_KEY <span style=color:#f92672>(</span>defined in .env file<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>◈ Injected .env file env var: SUPABASE_SERVICE_API_KEY
+</span></span><span style=display:flex><span>◈ Ignored general context env var: LANG <span style=color:#f92672>(</span>defined in process<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>◈ Ignored general context env var: LC_ALL <span style=color:#f92672>(</span>defined in process<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>◈ No app server detected. Using simple static server
+</span></span><span style=display:flex><span>◈ Unable to determine public folder to serve files from. Using current working directory
+</span></span><span style=display:flex><span>◈ Setup a netlify.toml file with a <span style=color:#f92672>[</span>dev<span style=color:#f92672>]</span> section to specify your dev server settings.
+</span></span><span style=display:flex><span>◈ See docs at: https://cli.netlify.com/netlify-dev#project-detection
+</span></span><span style=display:flex><span>◈ Running static server from <span style=color:#e6db74>&#34;line-in-shape&#34;</span>
+</span></span><span style=display:flex><span>◈ Loaded <span style=color:#66d9ef>function</span> upload-csv.
+</span></span><span style=display:flex><span>◈ Functions server is listening on <span style=color:#ae81ff>52182</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>◈ Static server listening to <span style=color:#ae81ff>3999</span>
+</span></span></code></pre></div><p>Navigate to http://localhost:3999, or replace 3999 with whatever the output says the static server is running on. You should now see the PsychoJS program! One problem, when you finish the experiment and the program tries to upload, it is unable to because no API keys are provided. To do this, you need your own supabase account and create a bucket to hold the CSVs. This next part should help accomplish that.</p><h2 id=collecting-csv-data-and-self-hosting-methods>Collecting CSV data (and self-hosting methods)
+<a class=anchor href=#collecting-csv-data-and-self-hosting-methods>#</a></h2><p>To get a datastore yourself or your own organization, there are many options. You can you Amazon AWS, MongoDB, Fauna DB, the list goes on. I just chose supabase because I was having issues getting AWS Dynamo DB to work. First, sign up with Supabase using the third-party Github login. On your supabase dashboard, click &ldquo;New Project&rdquo; and name it accordingly.</p><p align=center><img width=500px style=border-radius:10px src=images/new-project.png></p><p>After creating a project, a storage bucket must be created. Go to the storage icon on the left navigation bar, and click &ldquo;Create a new bucket&rdquo;</p><p align=center><img width=500px style=border-radius:10px src=images/new-bucket.png></p><p>Now that these things are created, we need to retrieve the database URL, API keys and access token. The database URL is an individual identifier for your project, and the API keys and access token are secret key that can be used to interact with the database (read and write data) and are used in the code. To get these things, look for the settings icon on the left. Click the icon > click API. You should see various fields that can be copied.</p><p align=center><img width=500px style=border-radius:10px src=images/keys.png></p><p>The top one (3) is the API key. The bottom one (4) is the database URL. These will both need to be added to your code so you can send the data to your own instance. To do this, create an <code>.env</code> file in the root of your project. This is an environment file and contains keys that should not be exposed to the public. Once you place these in the .env file, they will be read by the netlify function, so that it can run the code that uploads the CSV.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># in root of project in terminal</span>
+</span></span><span style=display:flex><span>touch .env
+</span></span><span style=display:flex><span>nano .env <span style=color:#75715e># or open in your text editor</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># paste these using nano, or in editor</span>
+</span></span><span style=display:flex><span>DATABASE_URL<span style=color:#f92672>={</span>the data base URL you copied<span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>SUPABASE_SERVICE_API_KEY<span style=color:#f92672>={</span>your api key<span style=color:#f92672>}</span>
+</span></span></code></pre></div><h2 id=let-netlify-read-your-github-repo>Let Netlify read your Github repo
+<a class=anchor href=#let-netlify-read-your-github-repo>#</a></h2><p>Now that you have it running locally, it should also be able to upload the CSVs to your supabase bucket as well. To get this deployed on netlify (for now, since we&rsquo;re using netlify functions), you will have to first push the code to Github. After adding your API keys to the <code>.env</code> file, the code is now ready for upload.</p><p>Create a new Github repo on the website. Name it whatever you like. It lists out several ways to get your code onto the empty repo. What you&rsquo;re interested in is the bottom section.</p><p align=center><img width=500px style=border-radius:10px src=images/add-remote-url.png></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># since you cloned the repo, you need a *new* remote url to push to</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># in the root of the project</span>
+</span></span><span style=display:flex><span>git remote set-url origin git@github.com<span style=color:#f92672>{</span>your-username<span style=color:#f92672>}</span>/<span style=color:#f92672>{</span>repo name<span style=color:#f92672>}</span>.git
+</span></span><span style=display:flex><span>git branch -M main
+</span></span><span style=display:flex><span>git push -u origin main
+</span></span></code></pre></div><p>Now you have to sign up with Netlify. They have a generous free tier of 125,000 requests per month, plenty of bandwidth for your site, and build minutes. Once you sign up, there will be a button that says &ldquo;new site from git&rdquo;. It will direct you to several options to authenticate with, so Netlify can read only the github repos you permit.</p><table><thead><tr><th style=text-align:center>new site from git</th><th style=text-align:center>connect repo</th></tr></thead><tbody><tr><td style=text-align:center><img src=images/new-site-from-git.png alt="new site from git"></td><td style=text-align:center><img src=images/connect-repo.png alt="connect repo"></td></tr></tbody></table><p>Once you select the repo that you gave Netlify access to, it will start building the site. It creates a build environment to set everything up. If everything goes to plan, the build should have succeeded. It should provide you a URL, which can be renamed in the site settings.</p><p align=center><img width=500px style=border-radius:10px src=images/deployed.png></p><p>You can now access this site from anywhere in the world! If you&rsquo;ve made it this far, then congratulations.</p><h2 id=moving-forward>Moving forward
+<a class=anchor href=#moving-forward>#</a></h2><p>If there are any suggestions, improvements, or issues encountered along the way, feel free to reach out via <a href=mailto:parkimothy@gmail.com>email</a>.</p><p>Some things I would like to add to this (tentative list):</p><ol><li>Authentication via code given by research coordinator<ul><li>With the domain in the public, anyone can access and the program may be prone to bots and DOS&rsquo;ing (highly unlikely for something so niche but could happen).</li><li>Since it&rsquo;s static, we can&rsquo;t perform authentication so we would have to resort to Netlify functions again. Entirely possible though.</li></ul></li></ol></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#problem>Problem</a></li><li><a href=#solution>Solution</a></li><li><a href=#key-parts-of-the-solution>Key parts of the solution</a></li><li><a href=#how-to-use-the-program>How to use the program</a></li><li><a href=#how-to-install-it-on-your-own>How to install it on your own</a></li><li><a href=#collecting-csv-data-and-self-hosting-methods>Collecting CSV data (and self-hosting methods)</a></li><li><a href=#let-netlify-read-your-github-repo>Let Netlify read your Github repo</a></li><li><a href=#moving-forward>Moving forward</a></li></ul></nav></div></aside></main></body></html>
