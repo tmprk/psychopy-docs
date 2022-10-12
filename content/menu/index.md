@@ -15,4 +15,4 @@ headless: true
   - [Line-in-shape Web]({{< relref "/docs/programs/line-in-shape-js" >}})
 
 - **HRS secondary data analysis**
-  - [Setup]({{< relref "/docs/HRS/setup" >}})
+  - [Setup]({{< relref "/docs/HRS/environment" >}})
