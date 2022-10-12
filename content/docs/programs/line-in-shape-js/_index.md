@@ -118,7 +118,7 @@ The program will let you know when the experiment has ended. However, where is t
 ## How to install it on your own
 
 Great, now you're ready to download the code and make some of your own changes. Before you clone the repository containing the code, there are some prerequisites:
-1. If you're on mac, [brew](https://brew.sh/) package manager. If you're on windows move to the next step.
+1. If you're on mac, [brew](https://brew.sh/) package manager. If you're on Windows move to the next step.
 2. Node and npm, for javascript runtime (local server)
 
 For mac users:
