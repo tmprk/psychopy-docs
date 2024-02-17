@@ -5,19 +5,23 @@ title: "Line-in-shape running on the web (PsychoJS)"
 
 # Line-in-shape written using PsychoJS
 
-## Problem
+Github: https://github.com/tmprk/line-in-shape-psychojs
 
-A Python script that runs psychopy code can only be used on the device it is installed on and cannot be deployed on the web. Even the GUI library that psychopy uses to create a window is specific to desktop computers.
+## Initial Problem
 
-As a result, the PsychoPy organization created some scripts to convert a psychopy project to psychojs. However, the program written in the previous section could not be converted to javascript since it was written programmatically and not using PsychoPy Builder. Only experiments made in the PsychoPy *Builder* can be converted using a script.
+It is not straightforward to build complex layouts and shapes in PsychoPy's graphical builder. A custom python script is required, but it can only be run on the device it is installed on and cannot be deployed on the web.
+
+The PsychoPy organization created some conversion tools to convert a PsychoPy project to PsychoJS. However, only projects created using the PsychoPy graphical Builder can be converted this way.
 
 ## Solution
 
-As a result, I decided to just translate the python code to javascript. The main logic was already written, so it just needed to be modified to line-in-shape with a few new JS classes and functions. Read [manual coding of PsychoJS studies](https://www.psychopy.org/online/psychojsCode.html), which described my situation perfectly.
+As a result, I got a barebones PsychoJS project and modified it to run line-in-shape. This required new Javascript classes and functions, as well as modification of the source code to communicate with a server of your choosing. Read [manual coding of PsychoJS studies](https://www.psychopy.org/online/psychojsCode.html), which described my situation perfectly.
 
 ## Key parts of the solution
 
-PsychoJS library doesn't require any server-side code to display shapes and accept keystrokes, etc. As a result, I decided to dabble in serverless and host the core program on Netlify, utlizing Netlify Functions for uploading data. In the words of Netlify:
+PsychoJS library doesn't require any server-side code to display shapes and accept keystrokes, etc. This means you can run it in a browser as long as all assets are present.
+
+This was a perfect use-case for serverless architecture, where we could host the static assets (HTML/CSS/JS/images) on Netlify and call Netlify Functions for uploading data to our database of choice. In the words of Netlify:
 
 > *Deploy server-side code that works as API endpoints, runs automatically in response to events, or processes more complex jobs in the background.*
 > 
